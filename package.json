@@ -1,0 +1,21 @@
+{
+	"name": "pikiland",
+	"type": "module",
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy --minify",
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
+	},
+	"dependencies": {
+		"chanfana": "^3.4.2",
+		"hono": "^4.13.16"
+	},
+	"devDependencies": {
+		"@types/node": "^26.6.6",
+		"wrangler": "^4.158.0"
+	},
+	"trustedDependencies": [
+		"esbuild",
+		"workerd"
+	]
+}

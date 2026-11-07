@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <h1>안녕하세요, <span id="githubLogin">User</span>님!</h1>
+        <a href="/docs">Docs</a>
+        <script>
+            fetch("/api/users/me")
+                .then((response) => {
+                    if (response.status === 401) {
+                        window.location.href = "/auth/github";
+                        return;
+                    }
+                    return response.json();
+                })
+                .then(
+                    (data) =>
+                        (document.querySelector("#githubLogin").innerHTML =
+                            data.login),
+                );
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PikiLand</title>
+        <script>
+            function hasToken() {
+                return document.cookie
+                    .split(";")
+                    .some((item) => item.trim().startsWith("__Host-token="));
+            }
+            if (hasToken()) {
+                window.location.href = "/dashboard";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>PikiLand</h1>
+        <ul>
+            <li><a href="/auth/github">Login as GitHub</a></li>
+            <li><a href="/docs">Docs</a></li>
+        </ul>
+    </body>
+</html>
