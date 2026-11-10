@@ -9,6 +9,7 @@ import { type AppContext } from "../types";
 export class GetCurrentUser extends OpenAPIRoute {
   schema = {
     summary: "현재 사용자 및 GitHub 연결 정보 조회",
+    operationId: "GetCurrentUser",
     security: [{ cookieAuth: [] }],
     tags: ["users"],
     responses: {
