@@ -40,7 +40,7 @@
    * https://developers.cloudflare.com/workers/configuration/secrets/
    */
   "vars": {
-    "BASE_URL": "https://pikiland.backend-urssu.workers.dev",
+    "BASE_URL": "https://pikiland.yourssu.com",
   },
   /**
    * Service Bindings (communicate between multiple Workers)
