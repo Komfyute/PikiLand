@@ -2,6 +2,7 @@ import { Hono, Next } from "hono";
 import { fromHono } from "chanfana";
 import auth from "./routes/auth";
 import { GetCurrentUser } from "./endpoints/getCurrentUser";
+import { ListRepositories } from "./endpoints/listRepositories";
 import { AppContext, Env } from "./types";
 import { getCookie } from "hono/cookie";
 import { verify } from "hono/jwt";
@@ -45,9 +46,9 @@ const jwtMiddleware = async (c: AppContext, next: Next) => {
   }
   await next();
 };
-
-openapi.use("/users/*", jwtMiddleware);
+openapi.use("/*", jwtMiddleware);
 
 openapi.get("/users/me", GetCurrentUser);
+openapi.get("/repositories", ListRepositories);
 
 export default app;
