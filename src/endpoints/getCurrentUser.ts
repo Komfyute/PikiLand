@@ -45,7 +45,7 @@ export class GetCurrentUser extends OpenAPIRoute {
 
     const userResponse = await fetch("https://api.github.com/user", {
       headers: {
-        Authorization: `Bearer ${access_token}`,
+        Authorization: `Bearer ${access_token.github_access_token}`,
         Accept: "application/vnd.github+json",
         "User-Agent": "PikiLand-Coordinator",
       },
